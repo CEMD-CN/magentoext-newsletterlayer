@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Creativestyle_Newsletterlayer>
+            <version>1.0.0</version>
+        </Creativestyle_Newsletterlayer>
+    </modules>
+
+    <global>
+        <models>
+            <newsletterlayer>
+                <class>Creativestyle_Newsletterlayer_Model</class>
+            </newsletterlayer>
+        </models>
+        <helpers>
+            <newsletterlayer>
+                <class>Creativestyle_Newsletterlayer_Helper</class>
+            </newsletterlayer>
+        </helpers>
+        <blocks>
+            <newsletter>
+                <rewrite>
+                    <subscribe>Creativestyle_Newsletterlayer_Block_Subscribe</subscribe>
+                </rewrite>
+            </newsletter>
+        </blocks>
+    </global>
+
+    <frontend>
+        <routers>
+            <newsletter>
+                <args>
+                    <modules>
+                        <Creativestyle_Newsletterlayer before="Mage_Newsletter">Creativestyle_Newsletterlayer</Creativestyle_Newsletterlayer>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+
+        <layout>
+            <updates module="Creativestyle_Newsletterlayer">
+                <newsletterlayer>
+                    <file>newsletterlayer.xml</file>
+                </newsletterlayer>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <newsletterlayer>
+                                            <title>Newsletter Layer</title>
+                                        </newsletterlayer>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+        <newsletterlayer>
+            <general>
+                <enabled>1</enabled>
+                <isajax>1</isajax>
+                <layerpage>all</layerpage>
+            </general>
+            <design>
+                <layerbgposition>0 0</layerbgposition>
+            </design>
+            <cookies>
+                <cookiesenabled>0</cookiesenabled>
+            </cookies>
+        </newsletterlayer>
+    </default>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Creativestyle_Newsletterlayer>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Creativestyle_Newsletterlayer>
+    </modules>
+</config>

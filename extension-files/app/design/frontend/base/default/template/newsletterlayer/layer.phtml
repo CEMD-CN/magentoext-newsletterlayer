@@ -1,0 +1,66 @@
+<?php 
+	$helper = Mage::helper('newsletterlayer');
+	$isAjax = $helper->getGeneralConfig('isajax');
+	$canSetCookie = 0;
+
+	if($helper->getCookiesConfig('cookiesenabled')) {
+		$canSetCookie = 1;
+	}
+?>
+<?php if($this->isNeedToDisplayLayer()): ?>
+	<div id="newsletterLayer">
+		<div class="nl-overlay"></div>
+		<div class="nl-layer">
+			<div class="nl-layercontent">
+				<div id="nl-block" class="nl-inner" style="<?php echo $this->getStyle(); ?>">
+					<a href="#" id="nl-close">&times;</a>
+
+					<?php if($this->getCmsBlock()): ?>
+						<div class="nl-cmsblock"><?php echo $this->getCmsBlock(); ?></div>
+					<?php endif; ?>
+
+					<form action="<?php echo $this->getNlFormActionUrl() ?>" method="post" id="newsletter-validate-detail-layer">
+					    <div class="block-content">
+					        <div class="input-box">
+					        	<label for="newsletter-layer"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
+					            <input type="text" name="email" id="newsletter-layer" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email" value="<?php if($this->getSubscriber()) echo $this->getSubscriber()->getEmail(); ?>" />
+					        </div>
+					        <div class="actions" id="newsletterLayer-send">
+					            <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
+					        </div>
+					    </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//<![CDATA[
+        	var _newsletterLayer = new newsletterLayer({
+	        	blockId: 'newsletterLayer',
+	        	contentWrapperId: 'nl-block',
+	        	actionsId: 'newsletterLayer-send',
+	        	formId: 'newsletter-validate-detail-layer',
+	            url: '<?php echo $this->getNlFormActionUrl() ?>',
+	            closeBtn: 'nl-close',
+	            indicator: '<?php echo $this->getAjaxLoaderUrl() ?>',
+	            canSetCookie: <?php echo $canSetCookie; ?>,
+	            cookieLifetime: <?php echo $this->getCookieLifetime() ?>
+	        });
+
+        	<?php if($isAjax): ?>
+		        Event.observe('newsletter-validate-detail-layer', 'submit', function(event) {
+		            _newsletterLayer.validate($('newsletter-layer').value);
+		            Event.stop(event);
+		        });
+
+		        Event.observe('nl-close', 'click', function(event){
+	            	_newsletterLayer.closeLayer('newsletterLayer');
+	            	Event.stop(event);
+	        	});
+	        <?php else: ?>
+	        	var newsletterSubscriberFormLayer = new VarienForm('newsletter-validate-detail-layer');
+	        <?php endif; ?>
+	    //]]>
+	</script>
+<?php endif; ?>

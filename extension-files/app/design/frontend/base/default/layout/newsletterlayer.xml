@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+    	<reference name="head">
+    		<action method="addItem" ifconfig="newsletterlayer/general/enabled"><type>skin_js</type><name>creativestyle/newsletterlayer/js/newsletterlayer.js</name></action>
+            <action method="addItem" ifconfig="newsletterlayer/general/enabled"><type>skin_css</type><name>creativestyle/newsletterlayer/css/newsletterlayer.css</name></action>
+        </reference>
+        <reference name="after_body_start">
+            <block type="newsletter/subscribe" name="newsletter.layer" template="newsletterlayer/layer.phtml"/>
+        </reference>
+    </default>
+</layout>

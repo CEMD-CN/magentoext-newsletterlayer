@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <creativestyle translate="label">
+            <label>Creativestyle</label>
+            <sort_order>220</sort_order>
+        </creativestyle>
+    </tabs>
+    <sections>
+        <newsletterlayer translate="label">
+            <label>Newsletter Layer</label>
+            <tab>creativestyle</tab>
+            <sort_order>180</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <class>open</class>
+                    <label>General</label>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Newsletter Layer</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <isajax translate="label">
+                            <label>Use AJAX to submit form</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </isajax>
+                        <layerpage translate="label">
+                            <label>Pages to display layer</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>newsletterlayer/system_config_source_layerpage</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layerpage>
+                    </fields>
+                </general>
+
+                <design translate="label">
+                    <label>Design</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <cmsblock translate="label">
+                            <label>CMS block to display</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>newsletterlayer/system_config_source_page</source_model>
+                            <sort_order>106</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cmsblock>
+                        <indicator translate="label">
+                            <label>Ajax Loading indicator</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">newsletterlayer</upload_dir>
+                            <base_url type="media" scope_info="1">newsletterlayer</base_url>
+                            <sort_order>108</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </indicator>
+                        <contentwidth translate="label comment">
+                            <label>Width of layer's content (px)</label>
+                            <comment><![CDATA[Leave empty for auto]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <validate>validate-number</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </contentwidth>
+                        <contentheight translate="label">
+                            <label>Height of layer's content (px)</label>
+                            <comment><![CDATA[Leave empty for auto]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <validate>validate-number</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </contentheight>
+                        <layerbgcolor translate="label comment">
+                            <label>Background color for the layer</label>
+                            <comment><![CDATA[css property: background-color. Values: #hex (f.e #ffffff - white), name (f.e. red, blue), or rgb(x, x, x)]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layerbgcolor>
+                        <layerbgimage translate="label comment">
+                            <label>Background image for the layer</label>
+                            <comment><![CDATA[css property: background-image]]></comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">newsletterlayer</upload_dir>
+                            <base_url type="media" scope_info="1">newsletterlayer</base_url>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layerbgimage>
+                        <layerbgrepeat translate="label">
+                            <label>Background repeat</label>
+                            <comment><![CDATA[css property: background-repeat]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layerbgrepeat>
+                        <layerbgposition translate="label">
+                            <label>Background position</label>
+                            <comment><![CDATA[css property: background-position]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>newsletterlayer/system_config_source_backgroundposition</source_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layerbgposition>
+                        <layerbgcustomposition translate="label comment">
+                            <label>Custom background position</label>
+                            <comment><![CDATA[css property: background-position. Example values: "20px 50px" or "35% 15%", where first value sets vertical position and second - horizontal]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><layerbgposition>custom</layerbgposition></depends>
+                        </layerbgcustomposition>
+                    </fields>
+                </design>
+
+                <cookies translate="label">
+                    <label>Cookies</label>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <cookiesenabled translate="label">
+                            <label>Enable Cookies</label>
+                            <comment><![CDATA[Setting "Yes" will display layer only once per X days]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cookiesenabled>
+                        <cookielifetime translate="label comment">
+                            <label>Cookie lifetime (in days)</label>
+                            <comment><![CDATA[leave empty for auto (7)]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>220</sort_order>
+                            <validate>validate-number</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cookielifetime>
+                    </fields>
+                </cookies>
+            </groups>
+        </newsletterlayer>
+    </sections>
+</config>
