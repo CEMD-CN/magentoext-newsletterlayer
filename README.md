@@ -18,3 +18,6 @@ Features - backend configuration options:
 * Cookie settings
   * enable/disable cookies
   * set cookie-lifetime to display layer only once per X days
+
+
+This extension is brought to you thanks to creativestyle (http://www.creativestyle.de)
