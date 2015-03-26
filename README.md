@@ -21,4 +21,4 @@ Features - backend configuration options:
 
 
 This extension is brought to you thanks to creativestyle (http://www.creativestyle.de)
-Extension is Opened, so you can modify it and do whatever you want, but please don't expect any technical support from my side.
+Extension is Open, so you can modify it and do whatever you want, but please don't expect any technical support from my side.
